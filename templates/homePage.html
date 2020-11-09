@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home Page</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+		<style type="text/css">
+			.container {
+				margin-top : 20px;
+				margin-bottom : 20px;
+			}
+
+			.text_container {
+				text-align: center;
+				margin: 1%;
+				font-size: 55px;
+  				text-decoration: underline;
+  				color: black;
+			}
+
+			.align_center {
+				 text-align: center;
+				 margin: auto;
+				 display: flex;
+				 display: grid;
+
+			}
+
+			.result_text_container {
+				text-align: center;
+				margin: 5%;
+				font-size: 55px;
+  				color: black;
+  				border-style: solid;
+  				border-width: thick;
+			}
+
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="container">
+			<div class = "alert alert-warning text_container">
+				<b>HOUSE PRICE PREDICTION</b>
+			</div>
+			<form method = "POST" action = "/">
+				<div class="form-group">
+			    <label>Crime per Capita</label>
+			    <input class="form-control" type = "text" name = "crim" placeholder = "CRIM-per capita crime rate by town" size = 50>
+			  </div>
+			  <div class="form-group">
+			    <label>ZN Proportions</label>
+			    <input class="form-control" type = "text" name = "zn" placeholder = "ZN-proportion of non-retail business acres per town" size = 50>
+			  </div>
+				<div class="form-group">
+			    <label>INDUS Proportions</label>
+			    <input class="form-control" type = "text" name = "indus" placeholder = "INDUS-propotion of non-retail business acres per town" size = 50>
+			  </div>
+
+				<div class="alert alert-info" role="alert">
+				  Charles River dummy variable
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type = "radio" name = "chas" value = "tract-bounds river" checked>
+				  <label class="form-check-label">Tract-Bounds River</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type = "radio" name = "chas" value = "otherwise">
+				  <label class="form-check-label" for="exampleRadios2">otherwise</label>
+				</div>
+				<br>
+				<div class="form-row">
+			    <div class="form-group col-md-6">
+			      <label>Nitric Oxides</label>
+						<input class="form-control"  type = "text" name = "nox" placeholder = "NOX-nitric oxides concentration (parts per 10 million)" size = 50>
+			    </div>
+			    <div class="form-group col-md-6">
+			      <label>Average Rooms</label>
+							<input class="form-control" type = "text" name = "rm" placeholder = "RM-average number of rooms per dwelling" size = 50>
+			    </div>
+			  </div>
+				<div class="form-row">
+			    <div class="form-group col-md-6">
+			      <label>Owner Occupied Proportions</label>
+						<input class="form-control" type = "text" name = "age" placeholder = "AGE-proportion of owner-occupied units built prior to 1940" size = 50>
+			    </div>
+			    <div class="form-group col-md-6">
+			      <label>Weighted Distances</label>
+							<input class="form-control" type = "text" name = "dis" placeholder = "DIS-weighted distances to five Boston employment centres" size = 50>
+			    </div>
+			  </div>
+				<div class="form-row">
+			    <div class="form-group col-md-6">
+			      <label>Accessibility Index</label>
+						<input class="form-control" type = "text" name = "rad" placeholder = "RAD-index of accessibility to radial highways" size = 50>
+			    </div>
+			    <div class="form-group col-md-6">
+			      <label>Tax Rate</label>
+							<input class="form-control" type = "text" name = "tax" placeholder = "TAX-full-value property-tax rate per 10000 (DOLLAR)" size = 50>
+			    </div>
+			  </div>
+				<div class="form-row">
+			    <div class="form-group col-md-4">
+			      <label>Puple Teacher Ratio</label>
+						<input class="form-control" type = "text" name = "ptratio" placeholder = "PTRATIO-pupil-teacher ratio by town" size = 50>
+			    </div>
+			    <div class="form-group col-md-4">
+			      <label>B Parameter</label>
+							<input class="form-control" type = "text" name = "b" placeholder = "B-Parameter" size = 50>
+			    </div>
+					<div class="form-group col-md-4">
+			      <label>Lower status of Population</label>
+							<input class="form-control" type = "text" name = "lstat" placeholder = "LSTAT-%lower status of the population" size = 50>
+			    </div>
+			  </div>
+				<input class="btn btn-primary align_center" type = "submit">
+			</form>
+
+			
+			{% if predicted_price %}
+				<div class = "result_text_container">
+					<h1> Predicted Price is: {{ predicted_price }} </h1>
+				</div>
+			{% endif %}
+			
+
+		</div>
+	</body>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</html>
